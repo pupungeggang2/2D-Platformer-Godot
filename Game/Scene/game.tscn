@@ -28,3 +28,5 @@ centered = false
 [node name="MachineOn" type="Sprite" parent="PlayerMachine"]
 texture = ExtResource( 3 )
 centered = false
+
+[node name="Map" type="Node2D" parent="."]

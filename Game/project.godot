@@ -21,6 +21,7 @@ Physics="*res://Script/physics.gd"
 VarPlayer="*res://Script/var_player.gd"
 UI="*res://Script/UI.gd"
 Field="*res://Script/field.gd"
+Data="*res://Script/data.gd"
 
 [display]
 

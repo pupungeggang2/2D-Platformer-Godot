@@ -5,6 +5,7 @@ onready var player_node_machine = get_node('PlayerMachine')
 
 func _ready():
 	player_mode_set(0)
+	map_generate()
 
 func _process(delta):
 	player_move(delta)
@@ -42,6 +43,18 @@ func input_handle():
 		
 	if Input.is_action_just_released('down'):
 		Variable.input['down'] = false
+
+func map_generate():
+	var node_map = get_node('Map')
+	
+	for i in range(15):
+		for j in range(20):
+			if Variable.block[i][j] == 1:
+				var temp_sprite = Sprite.new()
+				temp_sprite.texture = Data.texture_floor
+				temp_sprite.centered = false
+				temp_sprite.position = Vector2(j * 40, i * 40)
+				add_child_below_node(node_map, temp_sprite)
 
 func player_move(delta):
 	var temp_position_elemental = VarPlayer.position_elemental
